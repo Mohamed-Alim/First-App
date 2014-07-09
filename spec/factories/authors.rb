@@ -3,6 +3,6 @@
 FactoryGirl.define do
   factory :author do
     name "MyString"
-    date_of_birth "MyString"
+    date_of_birth "2014-07-09"
   end
 end

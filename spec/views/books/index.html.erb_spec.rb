@@ -5,13 +5,13 @@ RSpec.describe "books/index", :type => :view do
     assign(:books, [
       Book.create!(
         :name => "Name",
-        :Author_name => "Author Name",
-        :Library_name => "Library Name"
+        :author_id => 1,
+        :library_id => 2
       ),
       Book.create!(
         :name => "Name",
-        :Author_name => "Author Name",
-        :Library_name => "Library Name"
+        :author_id => 1,
+        :library_id => 2
       )
     ])
   end
@@ -19,7 +19,7 @@ RSpec.describe "books/index", :type => :view do
   it "renders a list of books" do
     render
     assert_select "tr>td", :text => "Name".to_s, :count => 2
-    assert_select "tr>td", :text => "Author Name".to_s, :count => 2
-    assert_select "tr>td", :text => "Library Name".to_s, :count => 2
+    assert_select "tr>td", :text => 1.to_s, :count => 2
+    assert_select "tr>td", :text => 2.to_s, :count => 2
   end
 end

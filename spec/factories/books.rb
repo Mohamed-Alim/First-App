@@ -3,7 +3,7 @@
 FactoryGirl.define do
   factory :book do
     name "MyString"
-    Author_name "MyString"
-    Library_name "MyString"
+    author_id 1
+    library_id 1
   end
 end

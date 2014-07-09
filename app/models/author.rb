@@ -8,5 +8,5 @@ class Author < ActiveRecord::Base
     params.require(:author).permit(:Name)
   end
   validates :name, :presence => true
-  has_many :Books
+  has_many :books
 end

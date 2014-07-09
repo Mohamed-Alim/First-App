@@ -11,19 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140708050113) do
+ActiveRecord::Schema.define(version: 20140709090203) do
 
   create_table "authors", force: true do |t|
     t.string   "name"
-    t.string   "date_of_birth"
+    t.date     "date_of_birth"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "books", force: true do |t|
     t.string   "name"
-    t.string   "Author_name"
-    t.string   "Library_name"
+    t.integer  "author_id"
+    t.integer  "library_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
