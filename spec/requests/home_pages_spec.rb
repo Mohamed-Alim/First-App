@@ -10,13 +10,13 @@ RSpec.describe "Home Pages", :type => :request do
  	end
  end
  	describe "About page" do
-	 	it "should have the content'About us'" do
+	 	it "should have the content'About'" do
 	 		visit 'home_page/about'
-	 		page.should have_content('About us')
-	 		page.should have_selector('h1', :text => 'About us')
+	 		page.should have_content('About')
+	 		page.should have_selector('h1', :text => 'About')
 	 		expect(page).to have_title('Demo App | About us')
  	end
-	 	end
+	 
 	 end
 	  describe "Location Page" do
 	 	it "should have the content'Location'" do
