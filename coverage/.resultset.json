@@ -3,6 +3,10 @@
     "coverage": {
       "C:/Sites/first_app/app/helpers/application_helper.rb": [
         1,
+        null,
+        1,
+        1,
+        null,
         null
       ],
       "C:/Sites/first_app/app/helpers/home_page_helper.rb": [
@@ -32,6 +36,6 @@
         null
       ]
     },
-    "timestamp": 1404992324
+    "timestamp": 1405155496
   }
 }
