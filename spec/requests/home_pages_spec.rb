@@ -11,11 +11,11 @@ RSpec.describe "Home Pages", :type => :request do
  	end
  end
  	describe "About page" do
-	 	it "should have the content'About'" do
+	 	it "should have the content'About us'" do
 	 		visit 'home_page/about'
-	 		page.should have_content('About')
+	 		page.should have_content('About us')
 	 		page.should have_content('This is the about page')
-	 		page.should have_selector('h1', :text => 'About')
+	 		page.should have_selector('h1', :text => 'About us')
 	 		expect(page).to have_title('Demo App | About us')
  	end
 	 
@@ -29,12 +29,12 @@ RSpec.describe "Home Pages", :type => :request do
 	 	end
   end
   describe "Contact Page" do
-	 	it "should have the content'Contact us'" do
+	 	it "should have the content'Contact Us'" do
 	 		visit 'home_page/contact'
-	 		page.should have_content('Contact us')
+	 		page.should have_content('Contact Us')
 	 		page.should have_content('This is the contact page')
-	 		page.should have_selector('h1', :text => 'Contact us')
-	 		expect(page).to have_title('Demo App | Contact us')
+	 		page.should have_selector('h1', :text => 'Contact Us')
+	 		expect(page).to have_title('Demo App | Contact Us')
 
 	 	end
 	 end
