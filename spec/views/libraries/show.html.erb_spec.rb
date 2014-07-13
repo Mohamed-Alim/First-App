@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe "libraries/show", :type => :view do
   before(:each) do
     @library = assign(:library, Library.create!(
-      :Name => "Name",
-      :URL => "Url"
+      :name => "Name",
+      :url => "Url"
     ))
   end
 

@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe "libraries/edit", :type => :view do
   before(:each) do
     @library = assign(:library, Library.create!(
-      :Name => "MyString",
-      :URL => "MyString"
+      :name => "MyString",
+      :url => "MyString"
     ))
   end
 
@@ -13,9 +13,9 @@ RSpec.describe "libraries/edit", :type => :view do
 
     assert_select "form[action=?][method=?]", library_path(@library), "post" do
 
-      assert_select "input#library_Name[name=?]", "library[Name]"
+      assert_select "input#library_name[name=?]", "library[name]"
 
-      assert_select "input#library_URL[name=?]", "library[URL]"
+      assert_select "input#library_url[name=?]", "library[url]"
     end
   end
 end

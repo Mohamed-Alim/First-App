@@ -4,12 +4,12 @@ RSpec.describe "libraries/index", :type => :view do
   before(:each) do
     assign(:libraries, [
       Library.create!(
-        :Name => "Name",
-        :URL => "Url"
+        :name => "Name",
+        :url => "Url"
       ),
       Library.create!(
-        :Name => "Name",
-        :URL => "Url"
+        :name => "Name",
+        :url => "Url"
       )
     ])
   end

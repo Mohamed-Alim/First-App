@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :library do
-    Name "MyString"
-    URL "MyString"
+    name "MyString"
+    url "MyString"
   end
 end

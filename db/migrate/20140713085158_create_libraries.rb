@@ -1,8 +1,8 @@
 class CreateLibraries < ActiveRecord::Migration
   def change
     create_table :libraries do |t|
-      t.string :Name
-      t.string :URL
+      t.string :name
+      t.string :url
 
       t.timestamps
     end
