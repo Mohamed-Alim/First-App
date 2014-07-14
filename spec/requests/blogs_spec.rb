@@ -20,7 +20,7 @@ RSpec.describe "Blogs", :type => :request do
     	visit root_path
     	click_link"About Us"
     	expect(page).to have_title(full_title('About Us'))
-    	click_link"Sign Up"
+    	click_link"Sign up"
     	expect(page).to have_title(full_title('Sign up'))
     end
 end
