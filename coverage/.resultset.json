@@ -42,8 +42,39 @@
         1,
         null,
         null
+      ],
+      "C:/Sites/first_app/app/models/user.rb": [
+        1,
+        1,
+        0,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        1,
+        null,
+        null,
+        null,
+        5,
+        null,
+        1,
+        17,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        null,
+        null
       ]
     },
-    "timestamp": 1405330371
+    "timestamp": 1405592225
   }
 }
