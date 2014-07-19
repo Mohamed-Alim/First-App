@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get '/contact' => 'blogs#contact'
 
-  get '/send/email' => 'blogs#send#email'#, as: :email
+  post 'blogs/send_email' => 'blogs#send_email'#, as: :email
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
