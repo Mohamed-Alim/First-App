@@ -1,4 +1,10 @@
 @import 'bootstrap';
+
+@mixin box_sizing {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: borderbox;
+	box-sizing: border-box;
+} 
 /*
 * Globals
 */
