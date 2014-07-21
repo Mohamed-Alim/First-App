@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get '/signup' => 'users#new'
 
+  delete '/signout' => 'sessions#destroy'
+  
   root 'blogs#home'
 
   get '/about' => 'blogs#about'

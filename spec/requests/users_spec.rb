@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Users", :type => :request do
+    subject {page}
   describe "Sign up page" do
   	before {visit signup_path}
   	it "should have the content'Sign up'" do
@@ -55,6 +56,7 @@ RSpec.describe "Users", :type => :request do
   			let(:user) {User.find_by_email("user@example.com")}
 
   			it {expect(page).to have_title(user.name)}
+        it {should have_link('Sign out')}
   		end
   	end
   end
