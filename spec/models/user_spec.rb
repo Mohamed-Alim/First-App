@@ -85,5 +85,14 @@ RSpec.describe User, :type => :model do
 			specify {expect(user_for_invalid_password).to be_falsey}
 		end
 	end
-end
+
+	describe "remember token" do
+		before{@user.save}
+		it "should not be blank" do
+			
+			subject.remember_token.should_not be_blank
+
+			end
+		end
+	end
 

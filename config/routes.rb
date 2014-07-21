@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   resources :users
+  resources :sessions, only: [:create, :destroy]
+
   get '/signup' => 'users#new'
 
   root 'blogs#home'

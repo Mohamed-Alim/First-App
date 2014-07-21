@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   	@user = User.new(user_params)
   	puts @user.inspect
   	if @user.save
+      flash[:notice] = "User successfully created"
   		redirect_to user_path(@user)
   	else
   		puts "ERRORS ARE"
