@@ -1,3 +1,4 @@
+
 source 'https://rubygems.org'
 
 
@@ -40,6 +41,9 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Use unicorn as the app server
 # gem 'unicorn'
+
+gem 'will_paginate', '3.0.3'
+gem 'bootstrap-will_paginate', '0.0.6'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

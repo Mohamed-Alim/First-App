@@ -3,17 +3,44 @@ require 'rails_helper'
 RSpec.describe "Users", :type => :request do
   subject {page}
   describe "index" do
-    before do
-      sign_in FactoryGirl.create(:user)
-      FactoryGirl.create(:user, name: "Bob", email: "bob@example.com")
-      FactoryGirl.create(:user, name: "Ben", email: "ben@example.com")
+    let(:user) {FactoryGirl.create(:user)}
+    
+    before(:all) {30.times{FactoryGirl.create(:user)}
+    
+    after(:all) {User.delete_all}
+
+    before(:each) do
+      sign_in user
       visit users_path
     end
+
     it {expect(page).to have_title("All Users")}
     it {expect(page).to have_selector('h1', text: 'All Users')}
-    it "should list each user" do
-      User.all.each do |user|
-        expect(page).to have_selector('li', text: user.name)
+
+    describe "pagination" do
+      it {should have_selector'div.pagination'}
+      it "should list each user" do
+        User.paginate(page: 1).each do |user|
+          expect(page).to have_selector('li>a', text: user.name)
+        end
+      end
+    end
+
+    describe "delete links" do
+      it {should_not have_link('delete')}
+
+      describe "as an admin user" do
+        let(:admin) {FactoryGirl.create(:admin)}
+        before do
+          sign_in admin
+          visit users_path
+        end
+
+        it{should have_link('delete', href: user_path(User.first))}
+        it "should be able to delete another user" do
+          expect {click_link('delete')}.to change(User, :count).by(-1)
+        end
+        it{should_not have_link('delete', href: user_path(admin))}
       end
     end
   end

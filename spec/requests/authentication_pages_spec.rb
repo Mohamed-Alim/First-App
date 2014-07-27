@@ -70,6 +70,7 @@ RSpec.describe "AuthenticationPages", :type => :request do
 				end
 			end
 		end
+
 		describe "as wrong user" do
 			let(:user){FactoryGirl.create(:user)}
 			let(:wrong_user){FactoryGirl.create(:user, email:"wrong@example.com")}
@@ -83,6 +84,16 @@ RSpec.describe "AuthenticationPages", :type => :request do
 				before {put user_path(wrong_user)}
 				specify {response.should redirect_to (root_path)}
 			end 
+		end
+
+		describe "as non-admin user" do
+			let(:user) {FactoryGirl.create(:user)}
+			let(:non_admin) {FactoryGirl.create(:user)}
+			before  {sign_in non_admin}
+			describe "submitting a delete request" do
+				before {delete user_path(user)}
+				specify {response.should redirect_to(root_path)}
+			end
 		end
 	end
 end
