@@ -101,8 +101,29 @@ RSpec.describe User, :type => :model do
 		it "should not be blank" do
 			
 			subject.remember_token.should_not be_blank
-
-			end
 		end
 	end
+	describe "post association" do
+		before {@user.save}
+		let!(:older_post) do
+			FactoryGirl.create(:post, user: @user, created_at: 1.day.ago)
+		end
+		let!(:newer_post) do
+			FactoryGirl.create(:post, user: @user, created_at: 1.hour.ago)
+		end
+
+
+		it "should have the right post in order" do
+			@user.posts.should == [newer_post, older_post]
+		end
+
+		it "should destroy associated posts" do
+			posts = @user.posts
+			@user.destroy
+			posts.each do |post|
+				Post.find_by_id(post,id).should be_nil
+
+		end
+	end
+end
 
